@@ -231,6 +231,7 @@ form.addEventListener('submit', async (e) => {
       form.reset();
       successMsg.classList.remove('hidden');
       successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (typeof fbq === 'function') fbq('track', 'Lead');
     } else {
       throw new Error('Server error');
     }
