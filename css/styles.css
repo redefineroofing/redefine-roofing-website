@@ -2158,3 +2158,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-inner-5 { grid-template-columns: 1fr; }
   .cta-banner-inner { flex-direction: column; text-align: center; }
 }
+
+/* ---------- Blog card real images + post featured image ---------- */
+.blog-img-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.post-featured {
+  margin: 0 0 32px;
+}
+.post-featured img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+}
