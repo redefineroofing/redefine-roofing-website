@@ -2175,3 +2175,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius-lg);
   display: block;
 }
+
+/* ---------- Inline blog post images ---------- */
+.prose .inline-img {
+  margin: 28px 0;
+}
+.prose .inline-img img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+.prose .inline-img.portrait {
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
