@@ -2300,3 +2300,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 560px) {
   .areas-groups { grid-template-columns: 1fr; }
 }
+
+/* ---------- Screen-reader-only (descriptive link text for SEO/a11y) ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -105,8 +105,15 @@
     }
   }
 
-  fit();
-  window.addEventListener('resize', fit);
+  // Defer the initial fit off the critical load path (it reads layout in a
+  // loop, which forces reflow). Debounce resize to avoid repeated thrashing.
+  const schedule = window.requestIdleCallback || window.requestAnimationFrame || function (f) { return setTimeout(f, 1); };
+  schedule(fit);
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fit, 150);
+  });
 })();
 
 /* ---------- Sticky Navbar ---------- */
