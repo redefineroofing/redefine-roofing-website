@@ -2199,3 +2199,104 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .prose-narrow h3 {
   margin-top: 24px;
 }
+
+/* ============================================================
+   SERVICE-AREA CITY NAVIGATION (mega-menu, footer, homepage)
+   ============================================================ */
+
+/* ---- Nav mega-menu (Service Areas) ---- */
+.dropdown-mega {
+  min-width: 720px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  padding: 24px 26px;
+}
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px 30px;
+  width: 100%;
+}
+.mega-col {
+  display: flex;
+  flex-direction: column;
+}
+.mega-col a {
+  padding: 5px 0;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  white-space: nowrap;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+.mega-col a:hover { color: var(--red); background: none; }
+.mega-col .mega-head {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--navy);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid var(--grey-light);
+}
+.mega-col .mega-head:hover { color: var(--red); }
+
+@media (max-width: 768px) {
+  .dropdown-mega { min-width: 0; padding: 6px 0 10px; left: auto; right: auto; transform: none; }
+  .mega-grid { grid-template-columns: 1fr; gap: 12px; }
+  .mega-col { text-align: center; }
+  .mega-col a { color: rgba(255,255,255,0.85); padding: 6px 0; }
+  .mega-col .mega-head { color: var(--white); border-bottom-color: rgba(255,255,255,0.2); }
+}
+
+/* ---- Footer grouped service areas ---- */
+.footer-col-areas ul { gap: 7px; }
+.footer-col-areas .footer-area-group { margin-top: 14px; }
+.footer-col-areas .footer-area-group:first-child { margin-top: 0; }
+.footer-col-areas .footer-area-group a {
+  color: rgba(255,255,255,0.9);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.footer-col-areas li a { font-size: 0.82rem; }
+
+/* ---- Homepage city groups ---- */
+.areas-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 32px;
+  text-align: left;
+}
+.areas-group-head {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--red);
+  transition: color var(--transition);
+}
+.areas-group-head:hover { color: var(--red); }
+.areas-group .chip-row { justify-content: flex-start; margin: 0; }
+
+/* ---- City page: county link at bottom ---- */
+.city-county-cta {
+  margin-top: 44px;
+  padding: 28px 32px;
+  background: var(--off-white);
+  border: 1px solid var(--grey-light);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+}
+.city-county-cta h2 { margin-top: 0; }
+.city-county-cta p:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .areas-groups { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .areas-groups { grid-template-columns: 1fr; }
+}
