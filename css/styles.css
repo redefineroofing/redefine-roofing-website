@@ -1563,7 +1563,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .nav-logo-img { height: 92px; }
 
-  .hero-video { object-fit: contain; background: var(--navy); }
+  .hero-video { object-fit: cover; background: var(--navy); }
 
   .nav-links {
     position: fixed;

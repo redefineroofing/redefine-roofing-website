@@ -2,6 +2,25 @@
    REDEFINE ROOFING — MAIN JS
    ============================================================ */
 
+/* ---------- Deferred Hero Video ----------
+   Keeps the ~10MB mp4 off the critical path so it never blocks LCP.
+   Loads only after the page is fully loaded, and skips mobile entirely
+   (poster image is shown there instead). */
+(function () {
+  const v = document.querySelector('.hero-video');
+  if (!v || !v.dataset.src) return;
+  function loadVideo() {
+    if (window.matchMedia('(max-width: 768px)').matches) return; // mobile: poster only
+    const s = document.createElement('source');
+    s.src = v.dataset.src;
+    s.type = 'video/mp4';
+    v.appendChild(s);
+    v.load();
+  }
+  if (document.readyState === 'complete') loadVideo();
+  else window.addEventListener('load', loadVideo);
+})();
+
 /* ---------- Hero Video Text Fade ---------- */
 (function () {
   const video   = document.querySelector('.hero-video');

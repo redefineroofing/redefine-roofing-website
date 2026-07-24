@@ -34,11 +34,12 @@
   <title>Tampa Bay Roofing Contractor | Redefine Roofing | Largo, FL</title>
   <meta name="description" content="Redefine Roofing — licensed &amp; insured residential roofing across Tampa Bay. Roof replacement, repair, storm damage &amp; insurance claims. Free estimates: (813) 590-9050." />
   <link rel="canonical" href="https://redefineroofing.com/" />
-  <link rel="stylesheet" href="css/styles.css?v=28" />
+  <link rel="stylesheet" href="css/styles.css?v=29" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -98,7 +99,7 @@
   <header id="navbar" class="navbar">
     <div class="container nav-inner">
       <a href="#home" class="logo">
-        <img src="images/logo-full.png" alt="Redefine Roofing" class="nav-logo-img" />
+        <img src="images/logo-full.png" alt="Redefine Roofing" width="500" height="333" class="nav-logo-img" />
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="/">Home</a>
@@ -182,9 +183,7 @@
        HERO
   ============================================================ -->
   <section id="home" class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="images/hero-video.mp4" type="video/mp4" />
-    </video>
+    <video class="hero-video" autoplay muted loop playsinline preload="none" poster="images/hero-poster.jpg" data-src="images/hero-video.mp4"></video>
     <div class="hero-overlay"></div>
     <div class="hero-content container hero-content-split">
       <p class="hero-tagline">Licensed &amp; Insured Residential Roofing</p>
@@ -208,7 +207,7 @@
       <img src="images/mascot.png" alt="Redefine Roofing Mascot" />
     </div>
     <div class="hero-scroll-hint">
-      <a href="#services"><i class="fa-solid fa-chevron-down"></i></a>
+      <a href="#services" aria-label="Scroll to services"><i class="fa-solid fa-chevron-down"></i></a>
     </div>
   </section>
 
@@ -241,42 +240,42 @@
           <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
           <h3>Roof Replacement</h3>
           <p>Full tear-off and replacement with our Atlas Signature Select Roofing System rated to exceed local building codes.</p>
-          <a href="/services/roof-replacement/" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/services/roof-replacement/" class="service-link" aria-label="Learn more about Roof Replacement">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
           <h3>Roof Repair</h3>
           <p>Fast, reliable fixes for leaks, missing shingles, damaged flashing, and storm damage — backed by our workmanship warranty.</p>
-          <a href="/services/roof-repair/" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/services/roof-repair/" class="service-link" aria-label="Learn more about Roof Repair">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-star"></i></div>
           <h3>Gutter Soffit and Fascia</h3>
           <p>Expert installation or repair of gutters, soffit and fascia. Whether you are wanting to refresh the look of your home or add more protection from the elements we have you covered.</p>
-          <a href="/services/gutters-soffit-fascia/" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/services/gutters-soffit-fascia/" class="service-link" aria-label="Learn more about Gutters Soffit Fascia">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
           <h3>Storm Damage &amp; Insurance Claims</h3>
           <p>We work directly with insurance companies to document damage and help you get your home back to pre-storm condition. Fast!</p>
-          <a href="/services/storm-damage-insurance-claims/" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/services/storm-damage-insurance-claims/" class="service-link" aria-label="Learn more about Storm Damage Insurance Claims">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-wind"></i></div>
           <h3>Ventilation &amp; Insulation</h3>
           <p>Proper attic ventilation extends shingle life and reduces energy costs. We assess and upgrade your entire roofing system.</p>
-          <a href="/services/ventilation-insulation/" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/services/ventilation-insulation/" class="service-link" aria-label="Learn more about Ventilation Insulation">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
           <h3>Roof Inspection</h3>
           <p>Comprehensive inspections for peace of mind — ideal before buying or selling a home, or after severe weather events.</p>
-          <a href="/services/roof-inspection/" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="/services/roof-inspection/" class="service-link" aria-label="Learn more about Roof Inspection">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
       </div>
@@ -327,11 +326,11 @@
         <div class="gallery-item" data-category="replacement">
           <div class="gallery-img-wrap">
             <div class="gallery-slideshow">
-              <img src="images/gallery/full-replacement-1.jpg" alt="Full roof replacement project" class="active" />
-              <img src="images/gallery/full-replacement-2.jpg" alt="Full roof replacement project" />
-              <img src="images/gallery/full-replacement-3.jpg" alt="Full roof replacement project" />
-              <img src="images/gallery/full-replacement-4.jpg" alt="Full roof replacement project" />
-              <img src="images/gallery/full-replacement-5.jpg" alt="Full roof replacement project" />
+              <img src="images/gallery/full-replacement-1.jpg" alt="Full roof replacement project" class="active" loading="lazy" />
+              <img src="images/gallery/full-replacement-2.jpg" alt="Full roof replacement project" loading="lazy" />
+              <img src="images/gallery/full-replacement-3.jpg" alt="Full roof replacement project" loading="lazy" />
+              <img src="images/gallery/full-replacement-4.jpg" alt="Full roof replacement project" loading="lazy" />
+              <img src="images/gallery/full-replacement-5.jpg" alt="Full roof replacement project" loading="lazy" />
             </div>
             <div class="gallery-overlay">
               <div class="gallery-info">
@@ -345,9 +344,9 @@
         <div class="gallery-item" data-category="repair">
           <div class="gallery-img-wrap">
             <div class="gallery-slideshow">
-              <img src="images/gallery/leak-repair-1.jpg" alt="Roof leak repair project" class="active" />
-              <img src="images/gallery/leak-repair-2.jpg" alt="Roof leak repair project" />
-              <img src="images/gallery/leak-repair-3.jpg" alt="Roof leak repair project" />
+              <img src="images/gallery/leak-repair-1.jpg" alt="Roof leak repair project" class="active" loading="lazy" />
+              <img src="images/gallery/leak-repair-2.jpg" alt="Roof leak repair project" loading="lazy" />
+              <img src="images/gallery/leak-repair-3.jpg" alt="Roof leak repair project" loading="lazy" />
             </div>
             <div class="gallery-overlay">
               <div class="gallery-info">
@@ -361,11 +360,11 @@
         <div class="gallery-item" data-category="metal">
           <div class="gallery-img-wrap">
             <div class="gallery-slideshow">
-              <img src="images/gallery/metal-roof-1.jpg" alt="Metal roof project" class="active" />
-              <img src="images/gallery/metal-roof-2.jpg" alt="Metal roof project" />
-              <img src="images/gallery/metal-roof-3.jpg" alt="Metal roof project" />
-              <img src="images/gallery/metal-roof-4.jpg" alt="Metal roof project" />
-              <img src="images/gallery/metal-roof-5.jpg" alt="Metal roof project" />
+              <img src="images/gallery/metal-roof-1.jpg" alt="Metal roof project" class="active" loading="lazy" />
+              <img src="images/gallery/metal-roof-2.jpg" alt="Metal roof project" loading="lazy" />
+              <img src="images/gallery/metal-roof-3.jpg" alt="Metal roof project" loading="lazy" />
+              <img src="images/gallery/metal-roof-4.jpg" alt="Metal roof project" loading="lazy" />
+              <img src="images/gallery/metal-roof-5.jpg" alt="Metal roof project" loading="lazy" />
             </div>
             <div class="gallery-overlay">
               <div class="gallery-info">
@@ -379,10 +378,10 @@
         <div class="gallery-item" data-category="storm">
           <div class="gallery-img-wrap">
             <div class="gallery-slideshow">
-              <img src="images/gallery/storm-damage-1.jpg" alt="Storm and hail damage project" class="active" />
-              <img src="images/gallery/storm-damage-2.jpg" alt="Storm and hail damage project" />
-              <img src="images/gallery/storm-damage-3.jpg" alt="Storm and hail damage project" />
-              <img src="images/gallery/storm-damage-4.jpg" alt="Storm and hail damage project" />
+              <img src="images/gallery/storm-damage-1.jpg" alt="Storm and hail damage project" class="active" loading="lazy" />
+              <img src="images/gallery/storm-damage-2.jpg" alt="Storm and hail damage project" loading="lazy" />
+              <img src="images/gallery/storm-damage-3.jpg" alt="Storm and hail damage project" loading="lazy" />
+              <img src="images/gallery/storm-damage-4.jpg" alt="Storm and hail damage project" loading="lazy" />
             </div>
             <div class="gallery-overlay">
               <div class="gallery-info">
@@ -501,7 +500,7 @@
             <p class="blog-date"><i class="fa-regular fa-calendar"></i> July 23, 2026</p>
             <h3>Why Attic Ventilation Matters More Than Most Florida Roofers Let On</h3>
             <p>Ventilation is the most skipped, undersold part of a roof — and in Florida's heat it's one of the most important.</p>
-            <a href="/blog/why-attic-ventilation-matters/" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="/blog/why-attic-ventilation-matters/" class="blog-link" aria-label="Read more: Why Attic Ventilation Matters More Than Most Florida Roofers Let On">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -514,7 +513,7 @@
             <p class="blog-date"><i class="fa-regular fa-calendar"></i> July 17, 2026</p>
             <h3>Why Every Tampa Bay Home Needs Gutters (And Whether Gutter Guards Are Worth It)</h3>
             <p>In Tampa Bay's downpours, gutters aren't optional — they protect your roof edge, foundation, siding, and even your stucco.</p>
-            <a href="/blog/why-tampa-bay-homes-need-gutters/" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="/blog/why-tampa-bay-homes-need-gutters/" class="blog-link" aria-label="Read more: Why Every Tampa Bay Home Needs Gutters (And Whether Gutter Guards Are Worth It)">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -527,7 +526,7 @@
             <p class="blog-date"><i class="fa-regular fa-calendar"></i> July 16, 2026</p>
             <h3>When Is Your Roof Ready to Be Replaced? 7 Signs Florida Homeowners Shouldn't Ignore</h3>
             <p>By the time a leak shows up inside your home, your roof has often been struggling for months. Here are 7 signs your roof is nearing the end of its life.</p>
-            <a href="/blog/signs-your-roof-needs-replacement/" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="/blog/signs-your-roof-needs-replacement/" class="blog-link" aria-label="Read more: When Is Your Roof Ready to Be Replaced? 7 Signs Florida Homeowners Shouldn't Ignore">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -750,7 +749,7 @@
     <div class="container footer-inner footer-inner-5">
       <div class="footer-brand">
         <a href="/" class="logo logo-light">
-          <img src="/images/logo-full.png" alt="Redefine Roofing logo" class="footer-logo-img" />
+          <img src="/images/logo-full.png" alt="Redefine Roofing logo" width="500" height="333" class="footer-logo-img" />
         </a>
         <p>Protecting Tampa Bay homes with expert craftsmanship and honest service since 2010.</p>
         <div class="social-links">
@@ -823,6 +822,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=11"></script>
 </body>
 </html>
