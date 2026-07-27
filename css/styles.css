@@ -1551,7 +1551,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .why-inner { grid-template-columns: 1fr; gap: 48px; }
   .why-image { display: none; }
   .about-inner { grid-template-columns: 1fr; }
-  .about-image { display: none; }
   .contact-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
