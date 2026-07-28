@@ -2340,3 +2340,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: auto;
   display: block;
 }
+
+/* ---------- Area-page landmark photo ---------- */
+.prose .landmark-figure {
+  margin: 0 0 34px;
+}
+.prose .landmark-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.prose .landmark-figure figcaption {
+  margin: 10px 4px 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-light);
+  text-align: center;
+  font-style: italic;
+}
