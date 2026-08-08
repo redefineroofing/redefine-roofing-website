@@ -379,6 +379,27 @@
     </div>
   </section>
 
+  <!-- Live Google reviews (Trustindex) — lazy-loaded on scroll, no LCP impact -->
+  <section class="section reviews-strip">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Reviews</span>
+        <h2>What Our Customers Say</h2>
+      </div>
+      <div class="reviews-widget" id="page-reviews"></div>
+      <p style="text-align:center;margin-top:24px;margin-bottom:0"><a href="/reviews/" class="btn btn-outline">Read All Our Reviews</a></p>
+    </div>
+  </section>
+  <script>
+  (function () {
+    var el = document.getElementById('page-reviews');
+    if (!el) return;
+    var done = false;
+    function load() { if (done) return; done = true; var s = document.createElement('script'); s.defer = true; s.async = true; s.src = 'https://cdn.trustindex.io/loader.js?f9e907178e8c81038336837155a'; el.appendChild(s); }
+    if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } }); }, { rootMargin: '400px' }); io.observe(el); }
+    else { load(); }
+  })();
+  </script>
   <section class="cta-banner">
     <div class="container cta-banner-inner">
       <div>
