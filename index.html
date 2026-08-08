@@ -409,27 +409,29 @@
         <span class="section-label">Reviews</span>
         <h2>What Our Customers Say</h2>
       </div>
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Redefine Roofing replaced our entire roof in just 2 days. The crew was professional, cleaned everything multiple times during the installation, and the roof looks incredible. I recommend them to everyone!"</p>
-          <div class="reviewer"><strong>Sarah M.</strong><span>Homeowner</span></div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"After the hurricane, they worked with me and my insurance company to get our roof back on and our house secure. They are very knowledgable and made the process super simple for me and my husband. The whole thing was totally stress free."</p>
-          <div class="reviewer"><strong>Linda T.</strong><span>Homeowner</span></div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p>"Got three estimates and Redefine came in with not only the best value but incredible pricing. They are more about educating than hard selling."</p>
-          <div class="reviewer"><strong>Marcus D.</strong><span>Homeowner</span></div>
-        </div>
-
-      </div>
+      <!-- Live Google reviews via Trustindex — lazy-loaded on scroll so it never touches the hero/LCP -->
+      <div class="reviews-widget" id="home-reviews"></div>
+      <p style="text-align:center;margin-top:28px"><a href="/reviews/" class="btn btn-outline">Read All Our Reviews</a></p>
+      <script>
+      (function () {
+        var el = document.getElementById('home-reviews');
+        if (!el) return;
+        var done = false;
+        function load() {
+          if (done) return; done = true;
+          var s = document.createElement('script');
+          s.defer = true; s.async = true;
+          s.src = 'https://cdn.trustindex.io/loader.js?f9e907178e8c81038336837155a';
+          el.appendChild(s);
+        }
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } });
+          }, { rootMargin: '400px' });
+          io.observe(el);
+        } else { load(); }
+      })();
+      </script>
     </div>
   </section>
 
