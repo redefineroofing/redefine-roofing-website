@@ -2,6 +2,19 @@
    REDEFINE ROOFING — MAIN JS
    ============================================================ */
 
+/* ---------- ChatGPT (OpenAI) Ads: lead conversion ($250) ---------- */
+function oaiqLead() {
+  if (typeof window.oaiq === 'function') {
+    window.oaiq('measure', 'lead_created', { type: 'customer_action', amount: 250, currency: 'USD' });
+  }
+}
+/* Count a phone-tap as a lead, once per page load */
+var oaiqFiredPhone = false, oaiqFiredEstimate = false;
+document.addEventListener('click', function (e) {
+  var link = (e.target && e.target.closest) ? e.target.closest('a[href^="tel:"]') : null;
+  if (link && !oaiqFiredPhone) { oaiqFiredPhone = true; oaiqLead(); }
+}, true);
+
 /* ---------- Deferred Hero Video ----------
    Keeps the ~10MB mp4 off the critical path so it never blocks LCP.
    Loads only after the page is fully loaded, and skips mobile entirely
@@ -67,6 +80,7 @@
     }
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (!oaiqFiredEstimate) { oaiqFiredEstimate = true; oaiqLead(); }
   }
 
   function closeModal() {
@@ -258,6 +272,7 @@ form.addEventListener('submit', async (e) => {
       successMsg.classList.remove('hidden');
       successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       if (typeof fbq === 'function') fbq('track', 'Lead');
+      oaiqLead();
     } else {
       throw new Error('Server error');
     }
