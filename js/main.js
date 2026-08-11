@@ -3,16 +3,16 @@
    ============================================================ */
 
 /* ---------- ChatGPT (OpenAI) Ads: lead conversion ($250) ---------- */
-function oaiqLead() {
+function oaiqLead(amount) {
   if (typeof window.oaiq === 'function') {
-    window.oaiq('measure', 'lead_created', { type: 'customer_action', amount: 250, currency: 'USD' });
+    window.oaiq('measure', 'lead_created', { type: 'customer_action', amount: amount, currency: 'USD' });
   }
 }
-/* Count a phone-tap as a lead, once per page load */
+/* Count a phone-tap as a lead ($300), once per page load */
 var oaiqFiredPhone = false, oaiqFiredEstimate = false;
 document.addEventListener('click', function (e) {
   var link = (e.target && e.target.closest) ? e.target.closest('a[href^="tel:"]') : null;
-  if (link && !oaiqFiredPhone) { oaiqFiredPhone = true; oaiqLead(); }
+  if (link && !oaiqFiredPhone) { oaiqFiredPhone = true; oaiqLead(300); }
 }, true);
 
 /* ---------- Deferred Hero Video ----------
@@ -80,7 +80,7 @@ document.addEventListener('click', function (e) {
     }
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
-    if (!oaiqFiredEstimate) { oaiqFiredEstimate = true; oaiqLead(); }
+    if (!oaiqFiredEstimate) { oaiqFiredEstimate = true; oaiqLead(50); }
   }
 
   function closeModal() {
@@ -272,7 +272,7 @@ form.addEventListener('submit', async (e) => {
       successMsg.classList.remove('hidden');
       successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       if (typeof fbq === 'function') fbq('track', 'Lead');
-      oaiqLead();
+      oaiqLead(250);
     } else {
       throw new Error('Server error');
     }
