@@ -324,78 +324,21 @@
         <h2>Project Gallery</h2>
         <p>Browse completed projects across our service area — every job a reflection of our commitment to quality.</p>
       </div>
-      <div class="gallery-grid" id="galleryGrid">
-
-        <div class="gallery-item" data-category="replacement">
-          <div class="gallery-img-wrap">
-            <div class="gallery-slideshow">
-              <img src="images/gallery/full-replacement-1.jpg" alt="Full roof replacement project" class="active" loading="lazy" />
-              <img src="images/gallery/full-replacement-2.jpg" alt="Full roof replacement project" loading="lazy" />
-              <img src="images/gallery/full-replacement-3.jpg" alt="Full roof replacement project" loading="lazy" />
-              <img src="images/gallery/full-replacement-4.jpg" alt="Full roof replacement project" loading="lazy" />
-              <img src="images/gallery/full-replacement-5.jpg" alt="Full roof replacement project" loading="lazy" />
-            </div>
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h4>Full Replacement</h4>
-                <p>Complete Atlas Signature Select Roofing System — no more mix and matching materials, compromising your warranty</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="repair">
-          <div class="gallery-img-wrap">
-            <div class="gallery-slideshow">
-              <img src="images/gallery/leak-repair-1.jpg" alt="Roof leak repair project" class="active" loading="lazy" />
-              <img src="images/gallery/leak-repair-2.jpg" alt="Roof leak repair project" loading="lazy" />
-              <img src="images/gallery/leak-repair-3.jpg" alt="Roof leak repair project" loading="lazy" />
-            </div>
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h4>Leak Repairs</h4>
-                <p>All repairs — no job too big or small</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="metal">
-          <div class="gallery-img-wrap">
-            <div class="gallery-slideshow">
-              <img src="images/gallery/metal-roof-1.jpg" alt="Metal roof project" class="active" loading="lazy" />
-              <img src="images/gallery/metal-roof-2.jpg" alt="Metal roof project" loading="lazy" />
-              <img src="images/gallery/metal-roof-3.jpg" alt="Metal roof project" loading="lazy" />
-              <img src="images/gallery/metal-roof-4.jpg" alt="Metal roof project" loading="lazy" />
-              <img src="images/gallery/metal-roof-5.jpg" alt="Metal roof project" loading="lazy" />
-            </div>
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h4>Metal Roof</h4>
-                <p>Standing seam, exposed fastener and stone coated steel</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" data-category="storm">
-          <div class="gallery-img-wrap">
-            <div class="gallery-slideshow">
-              <img src="images/gallery/storm-damage-1.jpg" alt="Storm and hail damage project" class="active" loading="lazy" />
-              <img src="images/gallery/storm-damage-2.jpg" alt="Storm and hail damage project" loading="lazy" />
-              <img src="images/gallery/storm-damage-3.jpg" alt="Storm and hail damage project" loading="lazy" />
-              <img src="images/gallery/storm-damage-4.jpg" alt="Storm and hail damage project" loading="lazy" />
-            </div>
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h4>Hail &amp; Wind Damage Restoration</h4>
-                <p>Insurance claim handled — only your deductible to pay</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+            <!-- Managed project gallery (lazy-loaded on scroll — no LCP impact) -->
+      <div class="gallery-widget" id="home-gallery">
+        <iframe data-src="https://www.localmarketingmanager.com/api/images/redefine-roofing-image-widget" style="width: 100%; border: none; min-height: 480px;" title="Redefine Roofing Project Gallery"></iframe>
       </div>
+      <script>
+      (function () {
+        var wrap = document.getElementById('home-gallery');
+        if (!wrap) return;
+        var iframe = wrap.querySelector('iframe');
+        var done = false;
+        function load() { if (done) return; done = true; if (iframe.dataset.src) iframe.src = iframe.dataset.src; }
+        if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } }); }, { rootMargin: '400px' }); io.observe(wrap); }
+        else { load(); }
+      })();
+      </script>
       <div class="gallery-cta">
         <a href="#contact" class="btn btn-primary">Start Your Project</a>
       </div>
