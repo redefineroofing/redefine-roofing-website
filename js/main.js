@@ -9,7 +9,7 @@ function oaiqLead(amount) {
   }
 }
 /* Count a phone-tap as a lead ($300), once per page load */
-var oaiqFiredPhone = false, oaiqFiredEstimate = false;
+var oaiqFiredPhone = false;
 document.addEventListener('click', function (e) {
   var link = (e.target && e.target.closest) ? e.target.closest('a[href^="tel:"]') : null;
   if (link && !oaiqFiredPhone) { oaiqFiredPhone = true; oaiqLead(300); }
@@ -60,39 +60,6 @@ document.addEventListener('click', function (e) {
       content.style.pointerEvents = '';
       hidden = false;
     }
-  });
-})();
-
-/* ---------- Instant Estimate Modal ---------- */
-(function () {
-  const modal    = document.getElementById('estimatorModal');
-  const openBtns = document.querySelectorAll('#instantEstimateBtn, .js-instant-estimate');
-  if (!modal || !openBtns.length) return;
-
-  const closeBtn = document.getElementById('estimatorClose');
-  const overlay  = document.getElementById('estimatorOverlay');
-  const iframe   = modal.querySelector('iframe');
-
-  function openModal() {
-    // Lazy-load the estimator iframe the first time the modal opens
-    if (iframe && !iframe.getAttribute('src') && iframe.dataset.src) {
-      iframe.src = iframe.dataset.src;
-    }
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    if (!oaiqFiredEstimate) { oaiqFiredEstimate = true; oaiqLead(50); }
-  }
-
-  function closeModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  openBtns.forEach(btn => btn.addEventListener('click', openModal));
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
   });
 })();
 
