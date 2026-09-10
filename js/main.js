@@ -267,3 +267,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+/* ---------- Google "Add as Preferred Source" button ----------
+   publisher.js renders Google's own localized button into a SHADOW ROOT
+   on the holder div (not as light-DOM children), so poll the shadow root
+   instead. If the script is blocked or fails, nothing attaches and the
+   surrounding block stays hidden rather than leaving an orphan heading. */
+(function () {
+  const holders = document.querySelectorAll('[google-add-preferred-source-btn]');
+  if (!holders.length) return;
+  holders.forEach((holder) => {
+    const block = holder.closest('.gps-block');
+    if (!block) return;
+    const rendered = () =>
+      (holder.shadowRoot && holder.shadowRoot.childElementCount > 0) ||
+      holder.childElementCount > 0;
+    if (rendered()) { block.classList.add('is-ready'); return; }
+    /* Google injects asynchronously — check for ~15s, then give up. */
+    let tries = 0;
+    const timer = setInterval(() => {
+      if (rendered()) {
+        block.classList.add('is-ready');
+        clearInterval(timer);
+      } else if (++tries > 60) {
+        clearInterval(timer);
+      }
+    }, 250);
+  });
+})();

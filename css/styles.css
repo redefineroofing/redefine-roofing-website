@@ -2362,3 +2362,44 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-align: center;
   font-style: italic;
 }
+
+/* ============================================================
+   GOOGLE "ADD AS PREFERRED SOURCE" BUTTON
+   Google's publisher.js injects its own localized button into
+   [google-add-preferred-source-btn]. If the site isn't an
+   eligible source it injects nothing, so this wrapper stays
+   hidden until main.js sees a button actually appear.
+============================================================ */
+.gps-block {
+  display: none;
+  max-width: 620px;
+  margin: 56px auto 0;
+  padding: 28px 30px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius-lg);
+}
+.gps-block.is-ready { display: block; }
+
+.gps-block h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.gps-block p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+.gps-btn-holder {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .gps-block { padding: 24px 20px; margin-top: 44px; }
+}
