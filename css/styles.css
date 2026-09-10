@@ -2403,3 +2403,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 600px) {
   .gps-block { padding: 24px 20px; margin-top: 44px; }
 }
+
+/* ---------- Post disclaimer ---------- */
+.prose .post-disclaimer {
+  margin-top: 38px;
+  padding: 18px 22px;
+  border-left: 3px solid var(--grey-light);
+  background: var(--off-white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  font-style: italic;
+}
