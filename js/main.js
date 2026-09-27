@@ -195,12 +195,11 @@ const fields = {
   email     : { el: document.getElementById('email'),     errEl: document.getElementById('emailError'),     validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.' },
   phone     : { el: document.getElementById('phone'),     errEl: document.getElementById('phoneError'),     validate: v => v.trim().length >= 7 ? '' : 'Please enter a valid phone number.' },
   service   : { el: document.getElementById('service'),   errEl: document.getElementById('serviceError'),   validate: v => v !== '' ? '' : 'Please select a service.' },
-  consent   : { el: document.getElementById('consent'),   errEl: document.getElementById('consentError'),   validate: v => v ? '' : 'You must agree to be contacted.' },
 };
 
 function validateField(key) {
   const { el, errEl, validate } = fields[key];
-  const value = key === 'consent' ? el.checked : el.value;
+  const value = el.type === 'checkbox' ? el.checked : el.value;
   const msg = validate(value);
   errEl.textContent = msg;
   el.classList.toggle('error', msg !== '');
