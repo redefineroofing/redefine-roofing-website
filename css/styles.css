@@ -1397,6 +1397,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   cursor: pointer;
 }
 
+.form-legal-links {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+  margin: -4px 0 4px;
+}
+
+.form-legal-links a {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+.form-legal-links a:hover {
+  color: var(--red);
+}
+
 .form-error {
   font-size: 0.78rem;
   color: var(--red);
