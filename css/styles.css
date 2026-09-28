@@ -2421,6 +2421,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .gps-block { padding: 24px 20px; margin-top: 44px; }
 }
 
+/* ---------- Legal notice callout ---------- */
+.prose .legal-notice {
+  margin: 24px 0;
+  padding: 18px 22px;
+  border-left: 3px solid var(--red);
+  background: var(--off-white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.prose .legal-notice strong {
+  color: var(--navy);
+}
+
 /* ---------- Post disclaimer ---------- */
 .prose .post-disclaimer {
   margin-top: 38px;
