@@ -132,6 +132,69 @@ document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
   });
 });
 
+/* ---------- Project Photo Gallery Lightbox ---------- */
+(function () {
+  const photos = Array.from(document.querySelectorAll('.photo-gallery .photo'));
+  if (!photos.length) return;
+
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Project photo viewer');
+  box.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close photo viewer">&times;</button>' +
+    '<button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous photo">&#8249;</button>' +
+    '<figure class="lightbox-figure"><img alt="" /><figcaption class="lightbox-caption"></figcaption></figure>' +
+    '<button type="button" class="lightbox-nav lightbox-next" aria-label="Next photo">&#8250;</button>';
+  document.body.appendChild(box);
+
+  const img     = box.querySelector('img');
+  const caption = box.querySelector('.lightbox-caption');
+  const closeBtn = box.querySelector('.lightbox-close');
+  let current = 0;
+  let lastFocus = null;
+
+  function show(i) {
+    current = (i + photos.length) % photos.length;
+    const photo = photos[current];
+    const alt = photo.querySelector('img').alt;
+    img.src = photo.getAttribute('href');
+    img.alt = alt;
+    caption.textContent = (current + 1) + ' / ' + photos.length;
+  }
+
+  function open(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close() {
+    box.classList.remove('open');
+    document.body.style.overflow = '';
+    img.removeAttribute('src');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  photos.forEach((photo, i) => {
+    photo.addEventListener('click', (e) => { e.preventDefault(); open(i); });
+  });
+
+  closeBtn.addEventListener('click', close);
+  box.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
+  box.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
+  box.addEventListener('click', (e) => { if (e.target === box) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(current - 1);
+    else if (e.key === 'ArrowRight') show(current + 1);
+  });
+})();
+
 /* ---------- Gallery Slideshows ---------- */
 document.querySelectorAll('.gallery-slideshow').forEach(slideshow => {
   const slides = slideshow.querySelectorAll('img');

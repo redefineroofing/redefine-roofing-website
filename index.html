@@ -42,7 +42,7 @@
   <title>Tampa Bay Roofing Contractor | Redefine Roofing | Largo, FL</title>
   <meta name="description" content="Redefine Roofing — licensed &amp; insured residential roofing across Tampa Bay. Roof replacement, repair, storm damage &amp; insurance claims. Free estimates: (813) 590-9050." />
   <link rel="canonical" href="https://redefineroofing.com/" />
-  <link rel="stylesheet" href="css/styles.css?v=39" />
+  <link rel="stylesheet" href="css/styles.css?v=41" />
   <link rel="preload" href="/images/hero-poster.jpg" as="image" fetchpriority="high" />
   <link rel="preload" href="/fonts/open-sans.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin />
@@ -326,22 +326,28 @@
         <h2>Project Gallery</h2>
         <p>Browse completed projects across our service area — every job a reflection of our commitment to quality.</p>
       </div>
-            <!-- Managed project gallery (lazy-loaded on scroll — no LCP impact) -->
-      <div class="gallery-widget" id="home-gallery">
-        <iframe data-src="https://www.localmarketingmanager.com/api/images/redefine-roofing-image-widget" style="width: 100%; border: none; min-height: 480px;" title="Redefine Roofing Project Gallery"></iframe>
+      <div class="photo-gallery">
+        <a class="photo" href="/images/projects/aerial-blue-metal-roof.jpg">
+          <img src="/images/projects/aerial-blue-metal-roof-thumb.jpg" alt="Aerial view of a new blue metal roof on a home" width="800" height="450" loading="lazy" decoding="async" />
+        </a>
+        <a class="photo" href="/images/projects/aerial-hip-roof-overhead.jpg">
+          <img src="/images/projects/aerial-hip-roof-overhead-thumb.jpg" alt="Overhead aerial view of a hip roof with orange-brown roofing" width="800" height="450" loading="lazy" decoding="async" />
+        </a>
+        <a class="photo" href="/images/projects/blue-metal-roof-panels.jpg">
+          <img src="/images/projects/blue-metal-roof-panels-thumb.jpg" alt="Blue standing-seam metal roof panels and ridge cap on a home" width="600" height="800" loading="lazy" decoding="async" />
+        </a>
+        <a class="photo" href="/images/projects/redefine-roofing-crew-on-roof.jpg">
+          <img src="/images/projects/redefine-roofing-crew-on-roof-thumb.jpg" alt="Redefine Roofing crew working on a roof deck during a project" width="800" height="450" loading="lazy" decoding="async" />
+        </a>
+        <a class="photo" href="/images/projects/gray-architectural-shingles.jpg">
+          <img src="/images/projects/gray-architectural-shingles-thumb.jpg" alt="Gray architectural shingles installed on a residential roof" width="600" height="800" loading="lazy" decoding="async" />
+        </a>
+        <a class="photo" href="/images/projects/redefine-roofing-job-site-trailer.jpg">
+          <img src="/images/projects/redefine-roofing-job-site-trailer-thumb.jpg" alt="Redefine Roofing equipment trailer with QR code and logo banner at a job site" width="800" height="600" loading="lazy" decoding="async" />
+        </a>
       </div>
-      <script>
-      (function () {
-        var wrap = document.getElementById('home-gallery');
-        if (!wrap) return;
-        var iframe = wrap.querySelector('iframe');
-        var done = false;
-        function load() { if (done) return; done = true; if (iframe.dataset.src) iframe.src = iframe.dataset.src; }
-        if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } }); }, { rootMargin: '400px' }); io.observe(wrap); }
-        else { load(); }
-      })();
-      </script>
       <div class="gallery-cta">
+        <a href="/gallery/" class="btn btn-outline-dark">View Full Gallery</a>
         <a href="#contact" class="btn btn-primary">Start Your Project</a>
       </div>
     </div>
@@ -763,6 +769,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=17"></script>
+  <script src="js/main.js?v=19"></script>
 </body>
 </html>
